@@ -1,19 +1,15 @@
 // Following file is going to contain 150 problem and answer... So bare with it
 
 main();
-<<<<<<< HEAD
 function main() {
 	let choice = window.prompt("Please enter the question number:");
 	eval("question" + choice + "()");
 }
-// WAP to display the current day an.d time in the following format
-=======
-// 1. WAP to display the current day an.d time in the following format
->>>>>>> 414e67c (v1.0.0)
+
+// 1. WAP to display the current day and time in the following format
 // Output:
 // Today is: Tuesday.
 // Current time is: 10:30
-
 function question1() {
 	const weekday = [
 		"Sunday",
@@ -29,8 +25,6 @@ function question1() {
 	let time = date.getHours() + ":" + date.getMinutes();
 	console.log("Today is: " + day + "\nCurrent time is: " + time);
 }
-<<<<<<< HEAD
-=======
 
 // 2. Write a JavaScript program to print the contents of the current window
 function question2() {
@@ -43,6 +37,7 @@ function question3() {
 	today = date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear();
 	console.log(today);
 }
+
 // 4. Write a JavaScript program to find the area of a triangle where lengths of the three of its sides are 5, 6, 7.
 function question4() {
 	let a = 5;
@@ -53,6 +48,7 @@ function question4() {
 	let area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
 	console.log(area);
 }
+
 // 5. Write a JavaScript program to rotate the string 'w3resource' in right direction by periodically removing one letter from the end of the string and attaching it to the front.
 function question5() {
 	let string = "w3resource";
@@ -77,7 +73,6 @@ function question6() {
 }
 
 // 7. Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050.
-
 function question7() {
 	for (let i = 14; i <= 50; i++) {
 		let date = new Date(`1 January 20${i}`);
@@ -149,4 +144,3 @@ function main() {
 	let choice = window.prompt("Please enter the question number:");
 	eval("question" + choice + "()");
 }
->>>>>>> 414e67c (v1.0.0)
