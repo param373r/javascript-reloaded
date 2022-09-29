@@ -140,7 +140,118 @@ function question10() {
 	});
 }
 
+// 11. Write a JavaScript program to convert temperatures to and from Celsius, Fahrenheit.
+function question11() {
+	const body = document.body;
+	body.setAttribute("style", "padding: 10px;");
+	const form = document.createElement("form");
+	form.innerHTML = `
+	<label style="display: block; margin-bottom: 10px;">
+        <input id="temp" type="text" placeholder="Enter Temperature">
+    </label>
+    <button id="celsius">Convert to Celsius</button>
+    <button id="farenheit">Convert of Farenheit</button>
+	`;
+	body.append(form);
+
+	const answer = document.createElement("p");
+	answer.setAttribute("id", "answer");
+	body.append(answer);
+
+	document.getElementById("celsius").addEventListener("click", (e) => {
+		e.preventDefault();
+		let temp = document.getElementById("temp").value;
+		let c = (5 / 9) * (temp - 32);
+		answer.innerHTML = "The temperature in Celsius is: " + c;
+	});
+	document.getElementById("farenheit").addEventListener("click", (e) => {
+		e.preventDefault();
+		let temp = document.getElementById("temp").value;
+		let f = (9 / 5) * temp + 32;
+		answer.innerHTML = "The temperature in Farenheit is: " + f;
+	});
+}
+
+// 12. Write a JavaScript program to get the website URL (loading page).
+function question12() {
+	let p = document.createElement("p");
+	let url = window.location.origin;
+	p.append(url);
+	document.body.append(p);
+}
+
+// 13. Write a JavaScript exercise to create a variable using a user-defined name.
+function question13() {
+	let myvar = "abc";
+	let myvalue = 13;
+
+	let myObj = {
+		myvar: myvalue,
+	};
+
+	console.log(myObj);
+}
+
+// 14. Write a JavaScript exercise to get the extension of a filename.
+function question14() {
+	let filename = prompt("Enter file") || "demo.js";
+	let x = filename.split(".");
+	console.log("File extension for file:", filename, "is", x[x.length - 1]);
+}
+
+// 15. Write a JavaScript program to get the difference between a given number and 13, if the number is greater than 13 return double the absolute difference.
+function question15() {
+	let x = prompt("Enter a number");
+	let diff = x - 13;
+	if (diff > 0) {
+		console.log(diff * 2);
+	}
+}
+
+// 16. Write a JavaScript program to compute the sum of the two given integers. If the two values are same, then returns triple their sum.
+function question16() {
+	let x = prompt("Enter 2 integers separated by comma:").split(",");
+	if (x[0] == x[1]) {
+		return console.log((x[0] + x[1]) * 3);
+	}
+	console.log(x[0] + x[1]);
+}
+
+// 17. Write a JavaScript program to compute the absolute difference between a specified number and 19. Returns triple their absolute difference if the specified number is greater than 19.
+function question17() {
+	let x = prompt("Enter a number");
+	let diff = x - 19;
+	if (diff > 0) {
+		console.log(diff * 3);
+	}
+}
+
+// 18. Write a JavaScript program to check two given numbers and return true if one of the number is 50 or if their sum is 50.
+function question18() {
+	let arr = prompt("Enter 2 numbers, separated by comma").split(",");
+	let x = arr[0];
+	let y = arr[1];
+
+	if (x + y == 50 || x == 50 || y == 50) {
+		return console.log("Condition fullfilled");
+	}
+}
+
+// 19. Write a JavaScript program to check whether a given integer is within 20 of 100 or 400.
+function question19() {
+	return Math.abs(100 - x) <= 20 || Math.abs(400 - x <= 20);
+}
+
+// 20. Write a JavaScript program to check from two given integers, whether one is positive and another one is negative.
+function question20() {
+	let x = prompt("Enter 2 numbers separated by comma").split(",");
+	if ((x[0] < 0 && x[1] >= 0) || (x[0] >= 0 && x[1] < 0)) {
+		return console.log("Condition Fullfilled");
+	}
+	console.log("Numbers not fit the condition");
+}
+
 function main() {
-	let choice = window.prompt("Please enter the question number:");
+	let choice = 20 || window.prompt("Please enter the question number:");
 	eval("question" + choice + "()");
 }
